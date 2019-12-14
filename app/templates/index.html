@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>I love you so much, {{ name.username }}!</h3>
+    <h3> Hello there, {{ current_user.username|capitalize }}!</h3>
+    {% for post in posts %}
+        <p>{{ post.body }}.</p>
+        <p>Posted on {{ post.timestamp }}</p>
+    {% endfor %}
 {% endblock %}
